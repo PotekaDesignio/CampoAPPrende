@@ -1,0 +1,1545 @@
+﻿/* CSS Document */
+
+
+/* Desktops and laptops ----------- */
+@media all and (min-width : 1281px) and (max-width : 1920px)
+{
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+    {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-weight: inherit;
+        font-style: inherit;
+        font-size: 100%;
+        font-family: inherit;
+        vertical-align: baseline;
+    }
+
+    body
+    {
+        font-family: Arial;
+        background: url(../images/tablet/backgrounds/fondo_general.png) no-repeat center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: no-display;
+    }
+    
+    span
+    {
+        font-family: Arial;
+        font-weight: bold;
+    }
+
+    p
+    {
+        font-family: Arial;
+        font-style: normal;
+    }
+
+    input
+    {
+        padding: 0; /*border: none;         background: none;*/
+        border: none !important;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+
+
+    h2
+    {
+        font-family: Arial;
+        color: white;
+        font-size: 26pt;
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    .divTituloAplicacion
+    {
+        margin-top: 12%;
+        text-align: left;
+        position: absolute;
+    }
+
+    .divTituloAplicacion span
+    {
+        color: Black;
+        font-family: Arial;
+    }
+
+    .lblSubtituloAplicacion
+    {
+        margin-top: -5px;
+        font-size: x-large;
+    }
+
+    .page
+    {
+        display: none;
+        opacity: 0;
+        height: 700px;
+        overflow: hidden;
+    }
+
+    .page.current
+    {
+        display: block;
+        opacity: 1;
+    }
+
+    .divSubtituloInformacion
+    {
+        font-size: 16pt;
+    }
+
+    .btnMenu
+    {
+        display: inline-block;
+        width: 321px;
+        height: 51px;
+        cursor: pointer;
+    }
+
+    .btnMenu.chico
+    {
+        float: right;
+        margin-right: inherit;
+        display: inline-block;
+        width: 275px;
+        height: 51px;
+        cursor: pointer;
+    }
+
+    .btnMenu.chicoInferior
+    {
+        margin-right: inherit;
+        display: inline-block;
+        width: 250px;
+        height: 51px;
+        cursor: pointer;
+    }
+
+    .btnMenu.chicoLateral
+    {
+        margin-right: inherit;
+        display: inline-block;
+        width: 250px;
+        height: 51px;
+        cursor: pointer;
+    }
+
+    .btnMenu.chicoCalculadoras
+    {
+        margin-right: inherit;
+        display: inline-block;
+        width: 250px;
+        height: 51px;
+        cursor: pointer;
+        color: white;
+        text-align: left;
+        font-weight: bolder;
+        padding-left: 10%;
+    }
+
+    .btnMenuChicorio
+    {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    .btnMenuChicorio.RechicoPresupuesto
+    {
+        margin-right: inherit;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        color: white;
+        text-align: left;
+    }
+
+    .divBtnIniciar
+    {
+        width: 35%;
+        float: left;
+        height: 100%;
+        margin-right: 7%;
+        margin-left: 12%;
+        cursor: pointer;
+        display: inline-block;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .divContenidoFinanzas
+    {
+        margin-top: 5px;
+        display: none;
+        opacity: 0;
+    }
+
+    .divContenidoFinanzas.abierto
+    {
+        display: block;
+        opacity: 1;
+    }
+
+    .divMenuDerecho
+    {
+        width: 17%;
+        float: left;
+        height: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 0px;
+        margin-right: 20px;
+    }
+
+
+    #btnAyuda
+    {
+        background: url('../images/tablet/buttons/action/ayuda.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnMisFinanzas
+    {
+        background: url('../images/tablet/buttons/action/herramientas.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnCalculoPresupuesto
+    {
+        background: url('../images/tablet/buttons/action/calculadora_presupuesto.png') no-repeat right;
+        -webkit-background-size: 80%;
+        -moz-background-size: 80%;
+        -o-background-size: 80%;
+        background-size: 80%;
+    }
+
+    #btnPlanAhorro
+    {
+        background: url('../images/tablet/buttons/action/ahorro.png') no-repeat right;
+        -webkit-background-size: 80%;
+        -moz-background-size: 80%;
+        -o-background-size: 80%;
+        background-size: 80%;
+    }
+
+    #btnCapacitacion
+    {
+        background: url('../images/tablet/buttons/action/capacitacion.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnConfiguracion
+    {
+        background: url('../images/tablet/buttons/action/configuracion.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnReiniciarDatos
+    {
+        background: url('../images/tablet/buttons/action/boton_reiniciar.png') no-repeat right;
+        -webkit-background-size: 80%;
+        -moz-background-size: 80%;
+        -o-background-size: 80%;
+        background-size: 80%;
+    }
+
+    #btnNarrador
+    {
+        background: url('../images/tablet/buttons/action/boton_narrador_on.png') no-repeat right;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnContacto
+    {
+        background: url('../images/tablet/buttons/action/contacto.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnAcercaDe
+    {
+        background: url('../images/tablet/buttons/action/acerca_de.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnFacebook
+    {
+        background: url('../images/tablet/buttons/action/facebook.png') no-repeat left;
+        -webkit-background-size: 50%;
+        -moz-background-size: 50%;
+        -o-background-size: 50%;
+        background-size: 50%;
+    }
+
+    #btnTwitter
+    {
+        background: url('../images/tablet/buttons/action/twitter.png') no-repeat left;
+        -webkit-background-size: 50%;
+        -moz-background-size: 50%;
+        -o-background-size: 50%;
+        background-size: 50%;
+    }
+
+    #btnHome, #btnHome1, #btnHome2, #btnHome3, #btnHome4, #btnHome5, #btnHome6
+    {
+        background: url('../images/tablet/buttons/action/inicio.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnReglas
+    {
+        background: url('../images/tablet/buttons/action/siguiente.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnIniciarJuego
+    {
+        background: url('../images/tablet/buttons/action/siguiente.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .divLateralIzquierdoContainer
+    {
+        width: 15%;
+        float: left;
+        height: auto;
+        margin: 2% 2%;
+    }
+
+    .imgLogos
+    {
+        width: 80%;
+    }
+
+    .divCeldaMenu
+    {
+        float: left;
+        margin: 1% 0;
+    }
+
+    .divCeldaMenu.Ayuda
+    {
+        margin-bottom: 10%;
+    }
+
+    .divCeldaMenu.RedesSociales
+    {
+        margin-top: 10%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    /* Página dos*/
+
+    #page-2
+    {
+    }
+
+    .divInfoChancho
+    {
+        width: 100%;
+        overflow: hidden;
+        height: 85%;
+        margin-top: 0%;
+        cursor: pointer;
+        display: inline-block;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .divMenuNavegacion
+    {
+        height: 50px;
+        width: 100%;
+    }
+
+    .divPasosRuta
+    {
+        height: 300px;
+        width: 100%;
+        vertical-align: bottom;
+    }
+
+    .btnPasosRutaCelda
+    {
+        width: 100px;
+        position: absolute;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .btnPasosRuta
+    {
+        display: inline-block;
+        width: 100%;
+        height: 450px;
+        vertical-align: bottom;
+        cursor: pointer;
+        border: none !important;
+    }
+
+    .divMapaRuta
+    {
+        margin-top: 20px;
+        height: 80%;
+        z-index: -2;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .divMapaRuta table tr td
+    {
+        vertical-align: bottom;
+        text-align: center;
+    }
+
+
+
+    .spanModuloActual
+    {
+        font-size: 12pt;
+        color: gray;
+    }
+
+    .spanModuloActual.currento
+    {
+        color: black;
+    }
+
+    .divNombreModulo
+    {
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .spanTextoInfoBoton
+    {
+        font-size: 14pt;
+        color: black;
+    }
+
+    #btnOpcion1
+    {
+        background: url('../images/tablet/buttons/action/opcion_1_color_actual.png') no-repeat bottom;
+    }
+
+    #btnOpcion2
+    {
+        background: url('../images/tablet/buttons/action/opcion_2_gris.png') no-repeat bottom;
+    }
+
+    #btnOpcion3
+    {
+        background: url('../images/tablet/buttons/action/opcion_3_gris.png') no-repeat bottom;
+    }
+
+    #btnOpcion4
+    {
+        background: url('../images/tablet/buttons/action/opcion_4_gris.png') no-repeat bottom;
+    }
+
+    #btnOpcion5
+    {
+        background: url('../images/tablet/buttons/action/opcion_5_gris.png') no-repeat bottom;
+    }
+
+    #btnOpcion6
+    {
+        background: url('../images/tablet/buttons/action/opcion_6_gris.png') no-repeat bottom;
+    }
+
+    #btnVerdad
+    {
+        background: url('../images/tablet/buttons/action/boton_verdad.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnAtreves
+    {
+        background: url('../images/tablet/buttons/action/boton_atreve.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnMasInfo
+    {
+        background: url('../images/tablet/buttons/action/boton_conoce_mas.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnHerramientas
+    {
+        background: url('../images/tablet/buttons/action/presupuesto.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnTrivia
+    {
+        background: url('../images/tablet/buttons/action/boton_trivia.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnVolver, #btnVolver2, #btnVolver3, #btnVolver4, #btnVolver5, #btnVolver6, #btnVolver7, #btnVolver8, #btnVolver9, #btnVolver10
+    {
+        background: url('../images/tablet/buttons/action/atras.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnConoceMas1, #btnConoceMas3, #btnConoceMas5
+    {
+        /*background: url('../images/tablet/buttons/action/boton_que_es.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
+        color: white;
+        font-weight: bolder;
+        font-size: medium;
+        text-wrap: initial;
+        white-space: normal;
+        background-color: #E96A2D;
+    }
+
+    #btnConoceMas2, #btnConoceMas4, #btnConoceMas6
+    {
+        /*background: url('../images/tablet/buttons/action/boton_que_es.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
+        color: white;
+        font-weight: bolder;
+        font-size: medium;
+        text-wrap: normal;
+        white-space: normal;
+        background-color: #ED883D;
+    }
+
+    /*#btnParaQue {
+                                background: url('../images/tablet/buttons/action/boton_paraque_sirve.png') no-repeat top;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;
+                            }
+
+                            #btnPartes {
+                                background: url('../images/tablet/buttons/action/boton_partes.png') no-repeat top;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;
+                            }*/
+
+    #btnEnlaces
+    {
+        background: url('../images/tablet/buttons/action/boton_enlaces.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btn5050
+    {
+        background: url('../images/tablet/buttons/action/boton_50_50.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnLlamada
+    {
+        background: url('../images/tablet/buttons/action/boton_pregunta_amigo.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnPreguntaRedes
+    {
+        background: url('../images/tablet/buttons/action/boton_pregunta_redes.png') no-repeat top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #btnRespuesta1, #btnRespuesta3
+    {
+        /*background: url('../images/tablet/buttons/action/fondo_pregunta.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
+        background-color: #E96A2D;
+    }
+
+    #btnRespuesta2, #btnRespuesta4
+    {
+        /*background: url('../images/tablet/buttons/action/fondo_pregunta.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
+        background-color: #ED883D;
+    }
+
+
+
+    .imgImagenTrivia
+    {
+        display: block;
+        padding-top: 70px;
+        margin: auto;
+        height: 400px;
+    }
+
+    .divInfoTrivia
+    {
+        height: 85%;
+        z-index: -2;
+        float: left;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .divInfoSeccion
+    {
+        height: 90%;
+        z-index: -2;
+        float: left;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .divTriviaContainerBotones
+    {
+        float: left;
+        vertical-align: middle;
+        margin-top: 20%;
+        width: 35%;
+    }
+
+
+    .divOpcionesModuloContainer
+    {
+        margin-top: 0px;
+        height: 85%;
+        z-index: -2;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .divOpcionesModulo
+    {
+        margin-top: 50px;
+    }
+
+    .divOpcionesModuloPreguntasContainer
+    {
+        margin-top: 20px;
+        height: 85%;
+        z-index: -2;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .divOpcionesPreguntasModulo
+    {
+        margin-top: 50px;
+    }
+
+    .btnMenuPregunta
+    {
+        display: inline-block;
+        width: 100%;
+        height: 51px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .divOpcionesInfoSeccion
+    {
+        width: 30%;
+        float: left;
+    }
+
+
+    .divContenidoInfoSeccion
+    {
+        width: 65%;
+        height: 85%;
+        display: inline-block;
+        background-color: #E96A2D;
+        float: left;
+        padding: 20px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .divImagenCamposTrivia
+    {
+        float: left;
+        width: 30%;
+        text-align: center;
+        display: inline-block;
+        height: 100%;
+        margin-top: 20px;
+        z-index: -100000;
+    }
+
+    .divImagenCamposEstudio
+    {
+        float: left;
+        width: 30%;
+        text-align: center; /*background: url('../images/tablet/buttons/boton_campos_estudia.png') no-repeat center;*/
+        -webkit-background-size: 35%;
+        -moz-background-size: 35%;
+        -o-background-size: 35%;
+        background-size: 35%;
+        display: inline-block;
+        height: 100%;
+        z-index: -100000;
+    }
+
+    .divPreguntasModuloSalvavidas
+    {
+        width: 25%;
+        float: left;
+        margin-top: 0px;
+    }
+
+
+    .divPreguntasModuloSalvavidas
+    {
+        width: 25%;
+        float: left;
+        margin-top: 150px;
+    }
+
+    .divPreguntaRespuestasContainer
+    {
+        width: 70%;
+        height: 180px;
+        display: inline-block;
+        float: left;
+    }
+
+    .divPreguntasRespuestasDetalle
+    {
+        width: 100%;
+    }
+
+
+    .tableEncabezadoPregunta
+    {
+        background-color: #9C5018;
+        height: 80px;
+        vertical-align: middle;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+
+    .divTriviaRiesgo
+    {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    #spanEncabezadoPreguntaAtreves
+    {
+        font-size:x-large;
+    }
+    
+    #spanEstimuloRecibido
+    {
+        font-size:large;
+    }
+
+    .divTextoCasoRiesgo
+    {
+        background-color: #E96A2D;
+        height: 80px;
+        vertical-align: middle;
+        padding: 30px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .divDescripcionEstimulo
+    {
+        background-color: #ED883D;
+        height: 80px;
+        vertical-align: middle;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+    .divAyudaContainer
+    {
+        width: 95%;
+        overflow: hidden;
+        height: 75%;
+        margin:auto;
+        margin-top: 50px;
+        cursor: pointer;
+        
+    }
+
+    .divTextoAyuda
+    {
+        background-color: #E96A2D;
+        display: inline-block;
+        height: 90%;
+        vertical-align: middle;
+        text-align: justify;
+        margin: 10px;
+        padding: 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        color: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .divAcercaDeContainer
+    {
+        width: 95%;
+        overflow: hidden;
+        height: 75%;
+        margin:auto;
+        margin-top:50px;
+        cursor: pointer;
+        
+    }
+
+    .divTextoAcercaDe
+    {
+        background-color: #E96A2D;
+        display: inline-block;
+        height: 85%;
+        vertical-align: middle;
+        text-align: justify;
+        margin: 10px;
+        padding: 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        color: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .spanDisclaimer
+    {
+        text-align: center;
+    }
+
+    .divCapacitacionesContainer
+    {
+        width: 96%;
+        overflow: hidden;
+        height: 75%;
+        margin-top: 50px;
+        margin-left: 40px;
+        display: inline-block;
+    }
+
+    .divCuadroCapacitaciones
+    {
+        display: inline-block;
+        height: 100%;
+        width: 92%;
+        vertical-align: middle;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+        color: white;
+        overflow: auto;
+    }
+
+    .divCuadroCapacitaciones table
+    {
+        /*border: 1px solid white;*/
+        padding: 0;
+    }
+
+    .divCuadroCapacitaciones table thead tr td
+    {
+        background-color: #9C5018;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+    }
+
+    .divCuadroCapacitaciones table tbody tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: left;
+    }
+
+    .divCuadroCapacitaciones table tbody tr:nth-child(odd)
+    {
+        background-color: #ED883D;
+        text-align: center;
+    }
+
+    .divCuadroCapacitaciones table tbody tr:nth-child(even)
+    {
+        background-color: #E96A2D;
+        text-align: center;
+    }
+
+
+
+    .divCalculadoraPresupuestoContainer
+    {
+        width: 100%;
+        overflow: hidden;
+        height: 75%;
+        margin-top: 50px;
+        display: inline-block;
+    }
+
+    .divCuadroCalculadoraPresupuestoIzquierda
+    {
+        display: inline-block;
+        float: left;
+        height: 70%;
+        margin-top: 0px;
+        width: 25%;
+        vertical-align: middle;
+        text-align: center;
+        margin-left: 0px;
+        color: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .divCuadroCalculadoraPresupuestoDerecha
+    {
+        display: inline-block;
+        float: left;
+        height: 90%;
+        width: 70%;
+        vertical-align: middle;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .tdPrimeraCelda
+    {
+        width: 20%;
+    }
+
+    .tableTituloSeccion
+    {
+        background-color: #9C5018;
+        font-weight: bold;
+        text-align: left;
+        text-indent: 0px;
+    }
+
+    .tableTituloSeccionHeader
+    {
+        background-color: #9C5018;
+        font-weight: bold;
+        text-align: center;
+        text-indent: 0px;
+    }
+
+    .tableTituloSeccionTransparente
+    {
+        background-color: transparent;
+        font-weight: bold;
+        text-align: left;
+        text-indent: 0px;
+    }
+
+
+    .divCuadroCalculadoraPresupuestoDerecha table
+    {
+        /*border: 1px solid white;*/
+        padding: 0;
+    }
+
+    .divCuadroCalculadoraPresupuestoDerecha table thead tr td
+    {
+        /*background-color: #9C5018;*/
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+    }
+
+    .divCuadroCalculadoraPresupuestoDerecha table tbody tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .divCuadroCalculadoraPresupuestoDerecha table tbody tr td input
+    {
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 60%;
+        margin-left: 0px;
+        color: white;
+        background-color: transparent;
+    }
+
+    .divCuadroCalculadoraPresupuestoDerecha table tbody tr:nth-child(odd)
+    {
+        background-color: #ED883D; /*text-align: center;*/
+    }
+
+    .divCuadroCalculadoraPresupuestoDerecha table tbody tr:nth-child(even)
+    {
+        background-color: #E96A2D; /*text-align: center;*/
+    }
+
+
+    #btnAgregarIngreso
+    {
+        background: url('../images/tablet/buttons/action/boton_agregar_ingreso.png') no-repeat top;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #ED883D;*/
+    }
+
+    #btnReiniciar
+    {
+        background: url('../images/tablet/buttons/action/boton_borrar_calc.png') no-repeat top;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #ED883D;*/
+    }
+
+    #btnAgregarPeriodo
+    {
+        background: url('../images/tablet/buttons/action/boton_periodo.png') no-repeat top;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #E96A2D;*/
+    }
+
+    #btnAgregarGasto
+    {
+        background: url('../images/tablet/buttons/action/boton_agregar_gasto.png') no-repeat top;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #E96A2D;*/
+    }
+    #btnPres1
+    {
+        background: url('../images/tablet/buttons/action/boton_1_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnPres2
+    {
+        background: url('../images/tablet/buttons/action/boton_2_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnPres3
+    {
+        background: url('../images/tablet/buttons/action/boton_3_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnPres4
+    {
+        background: url('../images/tablet/buttons/action/boton_4_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnPres5
+    {
+        background: url('../images/tablet/buttons/action/boton_5_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnPres6
+    {
+        background: url('../images/tablet/buttons/action/boton_6_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+
+    /* Plan de Ahorro */
+
+
+    .divPlanAhorroContainer
+    {
+        width: 100%;
+        overflow: hidden;
+        height: 75%;
+        margin-top: 50px;
+        display: inline-block;
+    }
+
+    .divCuadroPlanAhorroIzquierda
+    {
+        display: inline-block;
+        float: left;
+        height: 70%;
+        margin-top: 0px;
+        width: 25%;
+        vertical-align: middle;
+        text-align: center;
+        margin-left: 0px;
+        color: white;
+        overflow: hidden;
+        font-size: 8pt;
+    }
+
+    .divCuadroPlanAhorroDerecha
+    {
+        display: inline-block;
+        float: left;
+        height: 90%;
+        margin-top: 0px;
+        width: 70%;
+        vertical-align: middle;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .tdPrimeraCeldaPlanAhorro
+    {
+        width: 20%;
+    }
+
+    .tableTituloSeccionPlanAhorro
+    {
+        background-color: #9C5018;
+        font-weight: bold;
+        text-align: left;
+        text-indent: 0px;
+    }
+
+    .tableTituloSeccionHeaderPlanAhorro
+    {
+        background-color: #9C5018;
+        font-weight: bold;
+        text-align: center;
+        text-indent: 0px;
+    }
+
+    .tableTituloSeccionHeaderPlanAhorro span
+    {
+        font-size: 10pt;
+    }
+
+    .tableTituloSeccionTransparentePlanAhorro
+    {
+        background-color: transparent;
+        font-weight: bold;
+        text-align: left;
+        text-indent: 0px;
+    }
+
+    .divCuadroPlanAhorroDerecha table
+    {
+        /*border: 1px solid white;*/
+        padding: 0;
+    }
+
+    .divCuadroPlanAhorroDerecha table thead tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+    }
+
+    .divCuadroPlanAhorroDerecha table thead tr span
+    {
+        font-size: 12pt;
+    }
+
+    .divCuadroPlanAhorroDerecha table tbody tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 16pt;
+    }
+
+    .divCuadroPlanAhorroDerecha table tbody tr td input
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 65%;
+        margin-left: 0px;
+        color: white;
+        background-color: transparent;
+        font-size: 60%;
+    }
+
+    .divCuadroPlanAhorroDerecha table tfoot tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 65%;
+        margin-left: 0px;
+        color: white;
+        background-color: #9C5018;
+    }
+
+    .divCuadroPlanAhorroDerecha table tfoot tr td input
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 65%;
+        margin-left: 0px;
+        color: white;
+        background-color: transparent;
+    }
+
+    .divCuadroPlanAhorroDerecha table tbody tr:nth-child(odd)
+    {
+        background-color: #ED883D;
+        text-align: center;
+    }
+
+    .divCuadroPlanAhorroDerecha table tbody tr:nth-child(even)
+    {
+        background-color: #E96A2D;
+        text-align: center;
+    }
+
+    .tablePlanAhorroDatosTotal table
+    {
+        /*border: 1px solid white;*/
+        padding: 0;
+    }
+
+    .tablePlanAhorroDatosTotal table thead tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: normal;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        vertical-align: middle;
+    }
+
+    .tablePlanAhorroDatosTotal table thead tr span
+    {
+        font-size: 8pt;
+    }
+
+    .tablePlanAhorroDatosTotal table tbody tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 10px;
+        padding-right: 0px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 12pt;
+    }
+
+    .tablePlanAhorroDatosTotal table tbody tr td input
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 65%;
+        margin-left: 0px;
+        color: white;
+        background-color: transparent;
+        font-size: 60%;
+    }
+
+    .tablePlanAhorroDatosTotal table tfoot tr td
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 65%;
+        margin-left: 0px;
+        color: white;
+        background-color: #9C5018;
+    }
+
+    .tablePlanAhorroDatosTotal table tfoot tr td input
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: black;
+        width: 65%;
+        margin-left: 0px;
+        color: white;
+        background-color: transparent;
+    }
+
+    #btnGuardarAhorro
+    {
+        background: url('../images/tablet/buttons/action/boton_periodo.png') no-repeat left;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #ED883D;*/
+    }
+
+    #btnAgregarMeta
+    {
+        background: url('../images/tablet/buttons/action/boton_agregar_meta_ahorro.png') no-repeat left;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #ED883D;*/
+    }
+
+    #btnReiniciarAhorro
+    {
+        background: url('../images/tablet/buttons/action/boton_reiniciar_ahorro.png') no-repeat left;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%; /*background-color: #ED883D;*/
+    }
+
+
+    #btnAhorro1
+    {
+        background: url('../images/tablet/buttons/action/boton_1_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnAhorro2
+    {
+        background: url('../images/tablet/buttons/action/boton_2_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnAhorro3
+    {
+        background: url('../images/tablet/buttons/action/boton_3_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnAhorro4
+    {
+        background: url('../images/tablet/buttons/action/boton_4_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnAhorro5
+    {
+        background: url('../images/tablet/buttons/action/boton_5_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+    #btnAhorro6
+    {
+        background: url('../images/tablet/buttons/action/boton_6_calc_pres.png') no-repeat left;
+        -webkit-background-size: 70%;
+        -moz-background-size: 70%;
+        -o-background-size: 70%;
+        background-size: 70%; /*background-color: #E96A2D;*/
+    }
+
+    .imgImagenCentroModulo
+    {
+        width: 60%;
+    }
+
+    .imgImagenCentroModuloChica
+    {
+        width: 80%;
+    }
+
+    .imgImagenCentroModuloChicaInicio
+    {
+        margin-top:-100px;
+        width: 100%;
+    }
+
+    .imgImagenCentroModuloChicaTrivia
+    {
+        width: 65%;
+    }
+    .imgImagenCentroModuloGrande
+    {
+        width: 55%;
+    }
+
+    .tableContenedorImagen
+    {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+}

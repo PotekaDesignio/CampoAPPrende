@@ -1,0 +1,180 @@
+/* CSS Document */
+
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+    @font-face {
+        font-family: Cosmos;
+        src: url(../fonts/fontawesome-webfont.woff);
+    }
+
+    @font-face {
+        font-family: Futura;
+        src: url(../fonts/Futura-Medium.woff);
+    }
+
+    body {
+        font-family: Cosmos, Futura, Arial;
+        background-image: url(../images/backgrounds/fondo_general.png);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: no-display;
+    }
+
+    input {
+        padding: 0;
+        /*border: none;
+        background: none;*/
+    }
+
+
+
+    h1 {
+        font-family: Cosmos, Futura, Arial;
+        color: white;
+        font-size: 36pt;
+        font-weight: 900;
+    }
+
+    .page {
+        display: none;
+        opacity: 0;
+        height: 600px;
+    }
+
+        .page.current {
+            display: block;
+            opacity: 1;
+            height: 600px;
+        }
+
+
+    .btnMenu {
+        display: inline-block;
+        width: 321px;
+        height: 51px;
+        cursor: pointer;
+    }
+
+        .btnMenu.chico {
+            float: right;
+            margin-right: inherit;
+            display: inline-block;
+            width: 275px;
+            height: 51px;
+            cursor: pointer;
+        }
+
+
+    .btnDonCampos {
+        margin: auto;
+    }
+
+    #btnIniciar {
+        display: block;
+        width: 453px;
+        height: 542px;
+        background: url('../images/buttons/don_campos chancho.png') no-repeat top;
+        cursor: pointer;
+    }
+
+    #btnAyuda {
+        background: url('../images/buttons/action/ayuda.png') no-repeat top;
+    }
+
+    .divContenidoFinanzas {
+        margin-top: 5px;
+        display: none;
+        opacity: 0;
+    }
+
+        .divContenidoFinanzas.abierto {
+            display: block;
+            opacity: 1;
+        }
+
+    #btnMisFinanzas {
+        background: url('../images/buttons/action/herramientas.png') no-repeat top;
+    }
+
+    #btnCalculoPresupuesto {
+        background: url('../images/buttons/action/presupuesto.png') no-repeat right;
+    }
+
+    #btnPlanAhorro {
+        background: url('../images/buttons/action/ahorro.png') no-repeat right;
+    }
+
+    #btnCapacitacion {
+        background: url('../images/buttons/action/capacitacion.png') no-repeat top;
+    }
+
+    #btnConfiguracion {
+        background: url('../images/buttons/action/configuracion.png') no-repeat top;
+    }
+
+    #btnContacto {
+        background: url('../images/buttons/action/contacto.png') no-repeat top;
+    }
+
+    #btnFacebook {
+        background: url('../images/buttons/action/facebook.png') no-repeat top;
+    }
+
+    #btnTwitter {
+        background: url('../images/buttons/action/twitter.png') no-repeat top;
+    }
+
+    .divLateralIzquierdoContainer {
+        width: 15%;
+        float: left;
+        height: auto;
+        margin: 2% 2%;
+    }
+
+    .imgLogos {
+        width: 40%;
+    }
+
+    .divTituloAplicacion {
+        position: absolute;
+        text-align: center;
+    }
+
+        .divTituloAplicacion span {
+            color: white;
+            font-family: Cosmos, Futura, Arial;
+        }
+
+    .lblSubtituloAplicacion {
+        margin-top: -20px;
+        font-size: x-large;
+    }
+
+    .divCeldaMenu {
+        float: left;
+        margin: 1% 0;
+    }
+
+        .divCeldaMenu.Ayuda {
+            margin-bottom: 10%;
+        }
+
+        .divCeldaMenu.RedesSociales {
+            margin-top: 10%;
+        }
+
+    /* Página dos*/
+
+    #page-2 {
+        background-image: url(../images/backgrounds/bienvenido_fondo.png);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: no-display;
+    }
+}
