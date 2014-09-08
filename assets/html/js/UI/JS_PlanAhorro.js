@@ -7,13 +7,13 @@
 
         $('#tablePlanAhorroDatos tbody').append("<tr>" +
                                         "<td class='tdPrimeraCelda'>" +
-                                        "<input type='text' name='MetaAhorro' value='Meta' class='info' />" +
+                                        "<input type='text' name='MetaAhorro' value='Meta' class='info' onclick='this.select();' />" +
                                         "</td>" +
                                         "<td>" +
-                                        "<input type='text' name='number1' value='0'  class='priceValor' />" +
+                                        "<input type='text' name='number1' value='0'  class='priceValor' onclick='this.select();' />" +
                                         "</td>" +
                                         "<td>" +
-                                        "<input type='number' name='number2' value='1'  class='priceMes' />" +
+                                        "<input type='number' name='number2' value='1'  class='priceMes' onclick='this.select();' />" +
                                         "</td>" +
                                         "<td>" +
                                         "<input type='text' name='number3' value='0'  class='priceAhorro' readonly='readonly' />" +
@@ -22,7 +22,6 @@
                                         "<input type='checkbox' name='chkAlcanzada' value='Alcanzada' class='checkAlcanzada'>" +
                                         "</td>" +
                                         "</tr>");
-
 
         UpdateHandlers();
         formatCurrencyTable();
@@ -37,14 +36,21 @@
                 $(this).val('');
             }
             $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
-            $(this).select();
+        });
+
+        $('.priceValor').keyup(function () {
+            $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
         });
 
         $('.priceMes').focus(function () {
             if ($(this).val() == '1') {
                 $(this).val('1');
             }
-            $(this).select();
+        });
+
+        
+        $('.priceMes').keyup(function () {
+            $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
         });
         
         $('.priceValor').blur(function () {
@@ -65,7 +71,10 @@
             if ($(this).val() == 'Meta') {
                 $(this).val('');
             }
-            $(this).select();
+        });
+
+        $('.info').keyup(function () {
+            $(this).val($(this).val().replace(/[^a-z]/g, ""));
         });
 
         $('.info').blur(function () {
@@ -94,6 +103,7 @@
 
     $('#btnReiniciarAhorro').click(function () {
         reiniciarPlanAhorro("tablePlanAhorroDatos");
+        $("#divCuadroPlanAhorroDerechaID").scrollTop(0);
     });
 
     $('#btnGuardarAhorro').click(function () {

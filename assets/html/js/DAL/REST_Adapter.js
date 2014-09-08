@@ -47,7 +47,7 @@ $(document).ready(function () {
                                 $(this).remove();
                             } else {
                                 usedNames[this.text] = this.value;
-                                if (indice >= 6) {
+                                if (indice <= 6) {
                                     var strResultado = this.value
                                     strResultado = strResultado.replace(";", ",");
                                     $("#lblOpcion" + indice.toString()).text(strResultado);

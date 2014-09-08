@@ -15,6 +15,39 @@
     <link rel="stylesheet" type="text/css" href="styles/styles_TabletOtro.css" />
     <link rel="stylesheet" type="text/css" href="styles/styles_Tablet_800x1280.css" />
     <link rel="stylesheet" type="text/css" href="styles/styles_Tablet_1280x1920.css" />
+    <script type="text/javascript">
+        //        function onStepBack() {
+        //            
+//                    var testVal = "Estoy probando llamar codigo JS desde Android....";
+//                    try {
+//                        AndroidFunctionToast.showToast(testVal);
+//                    }
+//                    catch (err) {
+//                        //alert(testVal);
+//                    }
+
+//                    history.go(-1);
+        //        }
+
+//        var hash = location.hash;
+
+//        setInterval(function () {
+//                    if (location.hash != hash && hash != "") {
+
+//                var testVal = "Changed from " + hash + " to " + location.hash;
+//                try {
+//                    AndroidFunctionToast.showToast(testVal);
+//                }
+//                catch (err) {
+//                    alert(testVal);
+//                }
+
+//                //history.go(-1);
+//                
+//            }
+//        }, 100);
+
+    </script>
 </head>
 <body>
     <!--Página principal - Home -->
@@ -40,7 +73,8 @@
                 <table class="tableContenedorImagen">
                     <tr>
                         <td style="text-align: center">
-                            <img src="images/tablet/buttons/don_campos_chancho.png" alt="" class="imgImagenCentroModuloChicaInicio" />
+                            <a id="aPage-2" href="#page-2">
+                                <img src="images/tablet/buttons/don_campos_chancho.png" alt="" class="imgImagenCentroModuloChicaInicio" /></a>
                         </td>
                     </tr>
                 </table>
@@ -74,7 +108,7 @@
                         <input type="button" id="btnAcercaDe" class="btnMenu especial" />
                     </div>
                     <div class="divCeldaMenu">
-                        <div id="divPruebaOcultar" style="overflow:hidden">
+                        <div id="divPruebaOcultar" style="overflow: hidden">
                             <div class="divCeldaMenu RedesSociales">
                                 <div style="float: left; width: 49%">
                                     <input type="button" id="btnFacebook" class="btnMenu" />
@@ -147,7 +181,7 @@
             </table>
         </div>
         <div class="divMapaRuta">
-            <table style="width: 90%; margin: auto">
+            <table style="width: 95%; margin: auto">
                 <tr>
                     <td>
                         <div class="btnPasosRutaCelda">
@@ -210,10 +244,8 @@
                                 <input type="button" id="btnOpcion6" class="btnPasosRuta" />
                                 <br />
                                 <div class="divNombreModulo">
-                                    <span class="spanModuloActual" id="lblOpcion6">
-                                        Información bancaria y protección al
-                                        consumidor
-                                    </span>
+                                    <span class="spanModuloActual" id="lblOpcion6">Información bancaria y protección al
+                                        consumidor </span>
                                 </div>
                             </div>
                         </div>
@@ -613,7 +645,7 @@
             </table>
         </div>
         <div class="divAyudaContainer">
-            <div class="divTextoAyuda">
+            <div class="divTextoAyuda" id="divTextoAyudaID">
                 <div style="margin-top: 1.5%;">
                     <p>
                         Esta es una aplicación que te ayudará a adquirir información financiera sobre ahorro,
@@ -684,22 +716,23 @@
         </div>
         <div class="divCapacitacionesContainer">
             <div class="divCuadroCapacitaciones">
-                <div style="margin-top: 1.5%; font-weight:normal">
+                <div style="margin-top: 1.5%; font-weight: normal">
                     <table width="100%" id="tableEventosCapacitaciones">
                         <thead>
                             <tr>
-                                <td style="font-size:large; font-weight:bold">
-                                    Fecha
+                                <td>
+                                    <span style="font-size: large; font-weight: bold">Fecha</span>
                                 </td>
-                                <td style="font-size:large; font-weight:bold">
-                                    Lugar
+                                <td>
+                                    <span style="font-size: large; font-weight: bold">Lugar</span>
                                 </td>
-                                <td style="font-size:large; font-weight:bold">
-                                    Nombre del Evento
+                                <td>
+                                    <span style="font-size: large; font-weight: bold">Nombre del Evento</span>
                                 </td>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -787,12 +820,13 @@
                     </tr>
                 </table>
             </div>
-            <div class="divCuadroCalculadoraPresupuestoDerecha">
-                <div style="margin-top: 1.5%; height:160%">
+            <div class="divCuadroCalculadoraPresupuestoDerecha" id="divCuadroCalculadoraPresupuestoDerechaID">
+                <div style="margin-top: 1.5%; height: 160%; margin-bottom:160%">
                     <table id="tableCalculadoraPresupuestoHeader" width="100%">
                         <thead>
                             <tr>
-                                <td class="tdPrimeraCelda tableTituloSeccionHeader"></td>
+                                <td class="tdPrimeraCelda tableTituloSeccionHeader">
+                                </td>
                                 <td class="tableTituloSeccionHeader">
                                     <span>Semana 1</span>
                                 </td>
@@ -814,13 +848,18 @@
                                 <td class="tableTituloSeccion tdPrimeraCelda">
                                     Ingresos
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                     <table id="tableCalculadoraPresupuestoGastos" width="100%">
                         <thead>
@@ -828,13 +867,18 @@
                                 <td class="tableTituloSeccion tdPrimeraCelda">
                                     Gastos
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                     <table id="tableCalculadoraPresupuestoTotal" width="100%">
                         <thead>
@@ -842,15 +886,20 @@
                                 <td class="tableTituloSeccion tdPrimeraCelda" id="tdTotal">
                                     Total
                                 </td>
-                                <td class="tableTituloSeccionTransparente"></td>
-                                <td class="tableTituloSeccionTransparente"></td>
-                                <td class="tableTituloSeccionTransparente"></td>
-                                <td class="tableTituloSeccionTransparente"></td>
+                                <td class="tableTituloSeccionTransparente">
+                                </td>
+                                <td class="tableTituloSeccionTransparente">
+                                </td>
+                                <td class="tableTituloSeccionTransparente">
+                                </td>
+                                <td class="tableTituloSeccionTransparente">
+                                </td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="tdPrimeraCelda"></td>
+                                <td class="tdPrimeraCelda">
+                                </td>
                                 <td class="tdPrimeraCelda">
                                     <input type='text' value='0' id="semana1" readonly="readonly" />
                                 </td>
@@ -902,9 +951,9 @@
             </table>
         </div>
         <div class="divAcercaDeContainer">
-            <div class="divTextoAcercaDe">
-                <div style="margin: auto; text-align: center; margin-top:2%;">
-                    <table style="width: 80%; margin:auto">
+            <div class="divTextoAcercaDe" id="divTextoAcercaDeID">
+                <div style="margin: auto; text-align: center; margin-top: 2%;">
+                    <table style="width: 80%; margin: auto">
                         <tr>
                             <td style="text-align: center">
                                 <img src="images/logos/Logo_Banco_Agrario.png" class="imgLogosAcercaDe" alt="Banco Agrario de Colombia" />
@@ -918,18 +967,15 @@
                         </tr>
                     </table>
                 </div>
-                <div style="margin-top:5%; margin-bottom:1.5%">
-                    <span style="font-weight:normal">
-                        CampoAPPrende nace como resultado de una iniciativa del Ministerio de las Tecnologías
-                        de la Información y Comunicaciones con el fin de acercar a diferentes grupos poblacionales
-                        a la tecnología.
-                    </span>
+                <div style="margin-top: 5%; margin-bottom: 1.5%">
+                    <span style="font-weight: normal">CampoAPPrende nace como resultado de una iniciativa
+                        del Ministerio de las Tecnologías de la Información y Comunicaciones con el fin
+                        de acercar a diferentes grupos poblacionales a la tecnología. </span>
                     <br />
                     <br />
-                    <span style="font-weight:normal">
-                        Esta aplicación es desarrollada por <b>Poteka Designio</b> dentro del marco de
-                        la Agrotón 2014 para las entidades Banco Agrario y Fiduagraria, obteniendo el primer
-                        lugar en dicho evento, en el reto de Educación Financiera.
+                    <span style="font-weight: normal">Esta aplicación es desarrollada por <b>Poteka Designio</b>
+                        dentro del marco de la Agrotón 2014 para las entidades Banco Agrario y Fiduagraria,
+                        obteniendo el primer lugar en dicho evento, en el reto de Educación Financiera.
                     </span>
                 </div>
             </div>
@@ -955,12 +1001,18 @@
     </div>
     <!-- Prureba de Servicios REST -->
     <div id="page-100" class="page">
-        <select id="ddlModulosDummie" name="ddlModulosDummie"></select>
-        <select id="ddlInformacionDetalleModulo" name="ddlInformacionDetalleModulo"></select>
-        <select id="ddlContenidoConoceMasDummie" name="ddlContenidoConoceMasDummie"></select>
-        <select id="ddlPreguntasTriviaEncabezado" name="ddlPreguntasTriviaEncabezado"></select>
-        <select id="ddlPreguntasTriviaDetalle" name="ddlPreguntasTriviaDetalle"></select>
-        <select id="ddlCapacitacionesDummie" name="ddlCapacitacionesDummie"></select>
+        <select id="ddlModulosDummie" name="ddlModulosDummie">
+        </select>
+        <select id="ddlInformacionDetalleModulo" name="ddlInformacionDetalleModulo">
+        </select>
+        <select id="ddlContenidoConoceMasDummie" name="ddlContenidoConoceMasDummie">
+        </select>
+        <select id="ddlPreguntasTriviaEncabezado" name="ddlPreguntasTriviaEncabezado">
+        </select>
+        <select id="ddlPreguntasTriviaDetalle" name="ddlPreguntasTriviaDetalle">
+        </select>
+        <select id="ddlCapacitacionesDummie" name="ddlCapacitacionesDummie">
+        </select>
     </div>
     <!--Página de plan de Ahorro-->
     <div id="page-13" class="page" style="position: static;">
@@ -1024,8 +1076,8 @@
                     </tr>
                 </table>
             </div>
-            <div class="divCuadroPlanAhorroDerecha">
-                <div style="margin-top: 1.5%; height:160%">
+            <div class="divCuadroPlanAhorroDerecha" id="divCuadroPlanAhorroDerechaID">
+                <div style="margin-top: 1.5%; height: 160%; margin-bottom:160%">
                     <table id="tablePlanAhorroDatos" width="100%">
                         <thead>
                             <tr>
@@ -1046,7 +1098,8 @@
                                 </td>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                     <div class="tablePlanAhorroDatosTotal">
                         <table id="tablePlanAhorroDatosTotal" width="100%">

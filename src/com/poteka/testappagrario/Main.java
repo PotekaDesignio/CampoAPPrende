@@ -195,6 +195,10 @@ public class Main extends Activity {
 	
 	@Override
 	public void onBackPressed() {
+		
+		//WebView myWebView = (WebView) findViewById(R.id.webViewMain);
+		//myWebView.loadUrl("javascript:onStepBack();");
+		
 	    if (doubleBackToExitPressedOnce) {
 	        super.onBackPressed();
 	        return;

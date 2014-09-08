@@ -219,7 +219,16 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
+
             }
         }
 
@@ -240,7 +249,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -283,7 +300,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -324,7 +349,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -365,7 +398,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -406,7 +447,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -447,7 +496,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -488,7 +545,15 @@
                 AndroidFunctionTalk.speakText(testVal);
             }
             catch (err) {
-                //alert(testVal);
+                try {
+                    var audio = new Audio();
+                    audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                    audio.defaultPlaybackRate = 1.5;
+                    audio.play();
+
+                } catch (e) {
+
+                }
             }
         }
 
@@ -640,6 +705,7 @@
             $('#page-9').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
 
         });
+        $("#divTextoAyudaID").scrollTop(0);
     });
 
     $('#btnAcercaDe').click(function () {
@@ -649,6 +715,7 @@
             $('#page-12').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
 
         });
+        $("#divTextoAcercaDeID").scrollTop(0);
     });
 
     $('#btnContacto').click(function () {
@@ -693,6 +760,7 @@
             $('#page-11').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
 
         });
+        $('divCuadroCalculadoraPresupuestoDerechaID').scrollTop(0);
     });
     $('#btnPlanAhorro').click(function () {
         var speed = 500;
@@ -701,6 +769,7 @@
             $('#page-13').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
 
         });
+        $("#divCuadroPlanAhorroDerechaID").scrollTop(0);
     });
 
     $('#btnCapacitacion').click(function () {

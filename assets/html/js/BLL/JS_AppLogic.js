@@ -61,8 +61,8 @@
                 narrador = false;
 
                 try {
-                    AndroidFunctionToast.showToast("Narrador desactivado");
-                    //AndroidFunctionTalk.speakText(testVal);
+                    var testVal = "Narrador desactivado";
+                    AndroidFunctionToast.showToast(testVal);
                 }
                 catch (err) {
                     //var iframe = document.createElement("IFRAME");
@@ -86,15 +86,15 @@
                 narrador = true;
 
                 try {
-                    AndroidFunctionToast.showToast("Narrador activado");
-
-                    AndroidFunctionTalk.speakText("Narrador activado");
+                    var testVal = "Narrador activado";
+                    AndroidFunctionToast.showToast(testVal);
+                    AndroidFunctionTalk.speakText(testVal);
                 }
                 catch (err) {
                     //var iframe = document.createElement("IFRAME");
                     //iframe.setAttribute("src", 'data:text/plain,');
                     //document.documentElement.appendChild(iframe);
-                    //window.frames[0].window.alert("Narrador activado");
+                    //window.frames[0].window.alert(testVal);
                     //iframe.parentNode.removeChild(iframe);
                     //calliOSFunction("Narrador activado", ["Ram"], onSuccess,
                     //              function (ret) {
@@ -102,6 +102,16 @@
                     //                      document.write("Error executing native function : <br>" + ret.message);
                     //              }
                     //              );
+
+                    try {
+                        var audio = new Audio();
+                        audio.src = 'http://www.translate.google.com/translate_tts?tl=es&q=' + testVal;
+                        audio.defaultPlaybackRate = 1.5;
+                        audio.play();
+
+                    } catch (e) {
+
+                    }
                 }
             }
 
@@ -134,18 +144,7 @@
         }
 
         if (totalRespuestasCorrectas == 5 && idModulo == estadoAvance) {
-            estadoAvance++;
-            totalRespuestasCorrectas = 0;
-            contadorSeAtreve = 0;
-            localStorage.setItem('contadorSeAtreve', 0);
-            localStorage.setItem('totalRespuestasCorrectas', totalRespuestasCorrectas);
-            localStorage.setItem('preguntasResueltas', "");
-
-            $("#btn5050").removeAttr("disabled");
-            $("#btnLlamada").removeAttr("disabled");
-            $("#btnPreguntaRedes").removeAttr("disabled");
-
-
+            
             var strMensajeFinalizacionModulo = "FACEBOOK_FINAL-MODULO_" + $('#lblTituloGeneralModulo').text() + "_Felicitaciones!! Has culminado exitosamente el módulo: " + $('#lblTituloGeneralModulo').text();
 
             try {
@@ -166,6 +165,31 @@
                 }
 
             }
+
+            if (estadoAvance == 6 && totalRespuestasCorrectas == 5) {
+                var strMensajeFinalizacionJuego = "¡Felicitaciones! Has finalizado CampoAPPrende! Aprovecha el conocimiento que has adquirido y aplícalo en tu vida diaria.";
+                try {
+                    AndroidFunctionToast.showToast(strMensajeFinalizacionJuego);
+                }
+                catch (err) {
+//                    var iframe = document.createElement("IFRAME");
+//                    iframe.setAttribute("src", 'data:text/plain,');
+//                    document.documentElement.appendChild(iframe);
+//                    window.frames[0].window.alert(strMensajeFinalizacionJuego);
+                    //                    iframe.parentNode.removeChild(iframe);
+                    alert(strMensajeFinalizacionJuego);
+                }
+            }
+            totalRespuestasCorrectas = 0;
+            localStorage.setItem('totalRespuestasCorrectas', totalRespuestasCorrectas);
+            estadoAvance++;
+            contadorSeAtreve = 0;
+            localStorage.setItem('contadorSeAtreve', 0);
+            localStorage.setItem('preguntasResueltas', "");
+
+            $("#btn5050").removeAttr("disabled");
+            $("#btnLlamada").removeAttr("disabled");
+            $("#btnPreguntaRedes").removeAttr("disabled");
         }
         else if (totalRespuestasCorrectas == 5) {
 
@@ -259,7 +283,7 @@
 
     $('#btnConoceMas1, #btnConoceMas2, #btnConoceMas3, #btnConoceMas4, #btnConoceMas5, #btnConoceMas6').click(function () {
 
-        cargarDetalleDefiniones($(this).val())
+        cargarDetalleDefiniones($(this).val());
     });
 
     function cargarDetallesConcepto() {
@@ -378,6 +402,7 @@
 
                 $("#divDefinicionConceptos").html(strResultado3);
                 indice++;
+                $("#divDefinicionConceptos").scrollTop(0);
             }
         });
 
@@ -1079,6 +1104,7 @@
                     element0.textContent = strResultado;
                     element0.style.height = "220px";
                     element0.style.padding = "10px";
+                    element0.style.fontWeight = "normal";
 
                     cell0.appendChild(element0);
                 }
@@ -1089,6 +1115,7 @@
                     element0.textContent = strResultado;
                     element0.style.height = "220px";
                     element0.style.padding = "10px";
+                    element0.style.fontWeight = "normal";
                     cell0.appendChild(element0);
                 }
                 if (addrow == 3) {
@@ -1098,6 +1125,7 @@
                     element0.textContent = strResultado;
                     element0.style.height = "220px";
                     element0.style.padding = "10px";
+                    element0.style.fontWeight = "normal";
                     cell0.appendChild(element0);
                 }
 

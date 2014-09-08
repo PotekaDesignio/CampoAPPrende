@@ -5,7 +5,7 @@
     $("#semana3").val(formatCurrency(0));
     $("#semana4").val(formatCurrency(0));
 
-    
+
     cargarPresupuestosGuardados();
     $('#btnAgregarIngreso').click(function () {
 
@@ -17,19 +17,19 @@
 
         $('#tableCalculadoraPresupuestoIngresos tbody').append("<tr>" +
                                                                                                        "<td class='tdPrimeraCelda'>" +
-                                                                                                       "<input type='text' name='FirstName' value='Nombre' class='info' />" +
+                                                                                                       "<input type='text' name='FirstName' value='Nombre' class='info' onclick='this.setSelectionRange(0, 9999);' />" +
                                                                                                        "</td>" +
                                                                                                        "<td>" +
-                                                                                                       "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                       "<input type='text' name='number' value='0'  class='price' onclick='this.setSelectionRange(0, 9999);' />" +
                                                                                                        "</td>" +
                                                                                                        "<td>" +
-                                                                                                       "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                       "<input type='text' name='number' value='0'  class='price' onclick='this.setSelectionRange(0, 9999);' />" +
                                                                                                        "</td>" +
                                                                                                        "<td>" +
-                                                                                                       "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                       "<input type='text' name='number' value='0'  class='price' onclick='this.setSelectionRange(0, 9999);' />" +
                                                                                                        "</td>" +
                                                                                                        "<td>" +
-                                                                                                       "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                       "<input type='text' name='number' value='0'  class='price' onclick='this.setSelectionRange(0, 9999);' />" +
                                                                                                        "</td>" +
                                                                                                        "</tr>");
 
@@ -51,19 +51,19 @@
 
         $('#tableCalculadoraPresupuestoGastos tbody').append("<tr>" +
                                                                                                    "<td class='tdPrimeraCelda'>" +
-                                                                                                   "<input type='text' name='FirstName' value='Nombre' class='info' />" +
+                                                                                                   "<input type='text' name='FirstName' value='Nombre' class='info' onclick='this.select();' />" +
                                                                                                    "</td>" +
                                                                                                    "<td>" +
-                                                                                                   "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                   "<input type='text' name='number' value='0'  class='price' onclick='this.select();' />" +
                                                                                                    "</td>" +
                                                                                                    "<td>" +
-                                                                                                   "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                   "<input type='text' name='number' value='0'  class='price' onclick='this.select();' />" +
                                                                                                    "</td>" +
                                                                                                    "<td>" +
-                                                                                                   "<input type='text' name='number' value='0'  class='price'/>" +
+                                                                                                   "<input type='text' name='number' value='0'  class='price' onclick='this.select();' />" +
                                                                                                    "</td>" +
                                                                                                    "<td>" +
-                                                                                                   "<input type='text' name='number' value='0'  class='price' />" +
+                                                                                                   "<input type='text' name='number' value='0'  class='price' onclick='this.select();' />" +
                                                                                                    "</td>" +
                                                                                                    "</tr>");
 
@@ -82,7 +82,10 @@
                 $(this).val('');
             }
             $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
-            $(this).select();
+        });
+
+        $('.price').keyup(function () {
+            $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
         });
 
         $('.price').blur(function () {
@@ -90,14 +93,17 @@
                 $(this).val('0');
             }
             formatCurrencyTable();
-            
+
         });
 
         $('.info').focus(function () {
             if ($(this).val() == 'Nombre') {
                 $(this).val('');
             }
-            $(this).select();
+        });
+
+        $('.info').keyup(function () {
+            $(this).val($(this).val().replace(/[^a-z]/g, ""));
         });
 
         $('.info').blur(function () {
@@ -130,9 +136,9 @@
             var semana4 = 0;
 
             var $tds = $(this).find('td'),
-                                        semana1 = parseFloat(Number($tds.eq(1).find($('.price')).val().replace(/[^0-9\.]+/g,""))),
-                                        semana2 = parseFloat(Number($tds.eq(2).find($('.price')).val().replace(/[^0-9\.]+/g,""))),
-                                        semana3 = parseFloat(Number($tds.eq(3).find($('.price')).val().replace(/[^0-9\.]+/g,""))),
+                                        semana1 = parseFloat(Number($tds.eq(1).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
+                                        semana2 = parseFloat(Number($tds.eq(2).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
+                                        semana3 = parseFloat(Number($tds.eq(3).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
                                         semana4 = parseFloat(Number($tds.eq(4).find($('.price')).val().replace(/[^0-9\.]+/g, "")));
 
 
@@ -204,7 +210,7 @@
             $(this).find('td').eq(3).find($('.price')).formatCurrency();
             $(this).find('td').eq(4).find($('.price')).formatCurrency();
         });
-        
+
         table = $("#tableCalculadoraPresupuestoGastos tbody");
         table.find('tr').each(function (i) {
             $(this).find('td').eq(1).find($('.price')).formatCurrency();
@@ -218,6 +224,7 @@
     $('#btnReiniciar').click(function () {
         reiniciarCalculadora("tableCalculadoraPresupuestoIngresos");
         reiniciarCalculadora("tableCalculadoraPresupuestoGastos");
+        $("#divCuadroCalculadoraPresupuestoDerechaID").scrollTop(0);
 
     });
 
@@ -308,17 +315,17 @@
             catch (err) {
                 try {
 
-//                    var iframe = document.createElement("IFRAME");
-//                    iframe.setAttribute("src", 'data:text/plain,');
-//                    document.documentElement.appendChild(iframe);
-//                    window.frames[0].window.alert(mensaje);
-//                    iframe.parentNode.removeChild(iframe);
+                    //                    var iframe = document.createElement("IFRAME");
+                    //                    iframe.setAttribute("src", 'data:text/plain,');
+                    //                    document.documentElement.appendChild(iframe);
+                    //                    window.frames[0].window.alert(mensaje);
+                    //                    iframe.parentNode.removeChild(iframe);
 
-//                    calliOSFunction("Narrador activado", ["Ram"], onSuccess,
-//                                  function (ret) {
-//                                      if (ret)
-//                                          document.write("Error executing native function : <br>" + ret.message);
-//                                  });
+                    //                    calliOSFunction("Narrador activado", ["Ram"], onSuccess,
+                    //                                  function (ret) {
+                    //                                      if (ret)
+                    //                                          document.write("Error executing native function : <br>" + ret.message);
+                    //                                  });
                     return;
                 }
                 catch (errre) {
@@ -342,17 +349,17 @@
         catch (err) {
             try {
 
-//                var iframe = document.createElement("IFRAME");
-//                iframe.setAttribute("src", 'data:text/plain,');
-//                document.documentElement.appendChild(iframe);
-//                window.frames[0].window.alert(mensaje);
-//                iframe.parentNode.removeChild(iframe);
-//                calliOSFunction("Narrador activado", ["Ram"], onSuccess,
-//                                  function (ret) {
-//                                      if (ret)
-//                                          document.write("Error executing native function : <br>" + ret.message);
-//                                  }
-//                                  );
+                //                var iframe = document.createElement("IFRAME");
+                //                iframe.setAttribute("src", 'data:text/plain,');
+                //                document.documentElement.appendChild(iframe);
+                //                window.frames[0].window.alert(mensaje);
+                //                iframe.parentNode.removeChild(iframe);
+                //                calliOSFunction("Narrador activado", ["Ram"], onSuccess,
+                //                                  function (ret) {
+                //                                      if (ret)
+                //                                          document.write("Error executing native function : <br>" + ret.message);
+                //                                  }
+                //                                  );
             }
             catch (errre) {
 
