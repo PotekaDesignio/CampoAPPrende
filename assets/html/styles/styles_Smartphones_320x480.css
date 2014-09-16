@@ -6,7 +6,16 @@
 /*@media only screen and (min-height: 320px)and (max-height: 480px) and (min-width:800px) and (max-width:856px) {*/
 
 /*este sirve para el emulador*/
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 480px) 
+{
+    
+    @font-face {
+        font-family: Futura;
+        src: url('../fonts/Futura-Medium.woff');
+        src: url('../fonts/Futura-Medium.eot');
+        src: url('../fonts/Futura-Medium.ttf');
+    }
+    
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
         margin: 0;
         padding: 0;
@@ -20,7 +29,7 @@
     }
 
     body {
-        font-family: Arial;
+        font-family: Futura;
         background: url(../images/tablet/backgrounds/fondo_general.png) no-repeat center;
         -webkit-background-size: 200%;
         -moz-background-size: 200%;
@@ -45,12 +54,12 @@
     }
 
     p {
-        font-family: Arial;
+        font-family: Futura;
         font-style: normal;
     }
 
     h2 {
-        font-family: Arial;
+        font-family: Futura;
         color: white;
         font-size: 16pt;
         font-weight: 900;
@@ -61,6 +70,10 @@
         text-align: left;
         position: absolute;
     }
+    
+    .divTituloAplicacion h2 {
+        font-size:16pt;
+    }
 
         .divTituloAplicacion span {
             color: Black; /*font-family: Cosmos, Futura, Arial;*/
@@ -68,7 +81,7 @@
 
     .lblSubtituloAplicacion {
         margin-top: -3px;
-        font-size: 8pt;
+        font-size: 10pt;
     }
 
     .divSubtituloInformacion {
@@ -93,6 +106,7 @@
         width: 180px;
         height: 30px;
         cursor: pointer;
+        font-family: Futura;
     }
 
         .btnMenu.chico {
@@ -567,23 +581,17 @@
     }
 
     #btnRespuesta1, #btnRespuesta3 {
-        /*background: url('../images/tablet/buttons/action/fondo_pregunta.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
         background-color: #E96A2D;
-        font-size: 10pt;
         white-space: normal;
     }
 
     #btnRespuesta2, #btnRespuesta4 {
-        /*background: url('../images/tablet/buttons/action/fondo_pregunta.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
         background-color: #ED883D;
-        font-size: 10pt;
         white-space: normal;
     }
 
     #btnConoceMas1, #btnConoceMas3, #btnConoceMas5 {
-        /*background: url('../images/tablet/buttons/action/boton_que_es.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
         color: white;
-        font-weight: bolder;
         font-size: 8pt;
         text-wrap: initial;
         white-space: normal;
@@ -591,9 +599,7 @@
     }
 
     #btnConoceMas2, #btnConoceMas4, #btnConoceMas6 {
-        /*background: url('../images/tablet/buttons/action/boton_que_es.png') no-repeat top;         -webkit-background-size: cover;         -moz-background-size: cover;         -o-background-size: cover;         background-size: cover;*/
         color: white;
-        font-weight: bolder;
         font-size: 8pt;
         text-wrap: normal;
         white-space: normal;
@@ -655,6 +661,8 @@
         height: 30px;
         cursor: pointer;
         color: white;
+        font-size:8pt;
+        font-family:Futura;
     }
 
     .tableCeldaBotonesDetalleModulo {
@@ -673,18 +681,19 @@
 
     .divContenidoInfoSeccion {
         width: 55%;
-        height: 130px;
+        height: auto;
         display: inline-block;
         text-align: justify;
         background-color: #E96A2D;
         float: left;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
         color: white;
         padding: 10px;
         margin-left: 20px;
         overflow: auto;
+        font-size:10pt;
     }
 
     .divImagenCamposTrivia {
@@ -732,7 +741,7 @@
 
     .tableEncabezadoPregunta {
         background-color: #9C5018;
-        height: 45px;
+        height: 30px;
         vertical-align: middle;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -741,15 +750,17 @@
     }
 
     #spanEncabezadoPregunta {
-        font-size: 12pt;
+        font-size: 10pt;
+        font-weight:bold;
     }
 
     #spanEncabezadoPreguntaAtreves {
-        font-size: 12pt;
+        font-size: 10pt;
+        font-weight:bold;
     }
 
     #spanEstimuloRecibido {
-        font-size: 10pt;
+        font-size: 9pt;
     }
 
 
@@ -997,11 +1008,12 @@
                 padding-bottom: 5px;
                 text-align: center;
                 color: black;
-                width: 65%;
+                width: 90%;
                 margin-left: 0px;
                 color: white;
                 background-color: transparent;
                 font-size: 50%;
+                font-family:Futura;
             }
 
         .divCuadroCalculadoraPresupuestoDerecha table tbody tr:nth-child(odd) {
@@ -1193,6 +1205,8 @@
             padding-top: 2px;
             padding-bottom: 2px;
             font-size: 12pt;
+            font-family:Futura;
+            
         }
 
             .divCuadroPlanAhorroDerecha table tbody tr td input {
@@ -1205,11 +1219,12 @@
                 padding-bottom: 5px;
                 text-align: center;
                 color: black;
-                width: 65%;
+                width: 90%;
                 margin-left: 0px;
                 color: white;
                 background-color: transparent;
                 font-size: 50%;
+                font-family:Futura;
             }
 
         .divCuadroPlanAhorroDerecha table tfoot tr td {
@@ -1302,6 +1317,7 @@
                 color: white;
                 background-color: transparent;
                 font-size: 40%;
+                font-family:Futura;
             }
 
         .tablePlanAhorroDatosTotal table tfoot tr td {

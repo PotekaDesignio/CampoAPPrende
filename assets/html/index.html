@@ -18,41 +18,41 @@
     <script type="text/javascript">
         //        function onStepBack() {
         //            
-//                    var testVal = "Estoy probando llamar codigo JS desde Android....";
-//                    try {
-//                        AndroidFunctionToast.showToast(testVal);
-//                    }
-//                    catch (err) {
-//                        //alert(testVal);
-//                    }
+        //                    var testVal = "Estoy probando llamar codigo JS desde Android....";
+        //                    try {
+        //                        AndroidFunctionToast.showToast(testVal);
+        //                    }
+        //                    catch (err) {
+        //                        //alert(testVal);
+        //                    }
 
-//                    history.go(-1);
+        //                    history.go(-1);
         //        }
 
-//        var hash = location.hash;
+        //        var hash = location.hash;
 
-//        setInterval(function () {
-//                    if (location.hash != hash && hash != "") {
+        //        setInterval(function () {
+        //                    if (location.hash != hash && hash != "") {
 
-//                var testVal = "Changed from " + hash + " to " + location.hash;
-//                try {
-//                    AndroidFunctionToast.showToast(testVal);
-//                }
-//                catch (err) {
-//                    alert(testVal);
-//                }
+        //                var testVal = "Changed from " + hash + " to " + location.hash;
+        //                try {
+        //                    AndroidFunctionToast.showToast(testVal);
+        //                }
+        //                catch (err) {
+        //                    alert(testVal);
+        //                }
 
-//                //history.go(-1);
-//                
-//            }
-//        }, 100);
+        //                //history.go(-1);
+        //                
+        //            }
+        //        }, 100);
 
     </script>
 </head>
 <body>
     <!--Página principal - Home -->
     <div id="page-1" class="page current">
-        <div>
+        <div style="position:fixed">
             <div class="divLateralIzquierdoContainer">
                 <div>
                     <img src="images/logos/Logo_Banco_Agrario.png" class="imgLogos" alt="Banco Agrario de Colombia" />
@@ -62,7 +62,7 @@
                 </div>
                 <div class="divTituloAplicacion">
                     <h2>
-                        Proyecta tus sueños...
+                        <b>Proyecta tus sueños...</b>
                     </h2>
                     <div class="lblSubtituloAplicacion">
                         <span>Hacerlos realidad es posible</span>
@@ -447,7 +447,7 @@
                                     <input type="button" id="btnConoceMas5" class="btnMenu chicoDefinicionConcepto" />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="visibility: hidden">
                                 <td>
                                     <input type="button" id="btnConoceMas6" class="btnMenu chicoDefinicionConcepto" />
                                 </td>
@@ -592,7 +592,7 @@
             <div class="divOpcionesModuloPreguntasContainer">
                 <div class="divOpcionesPreguntasModulo ">
                     <div class="divTriviaRiesgo">
-                        <table style="width: 100%; margin-top: 5%" cellspacing="5px">
+                        <table style="width: 95%; margin:auto; margin-top: 5%" cellspacing="2px">
                             <tr>
                                 <td align="center" class="tableEncabezadoPregunta">
                                     <h2>
@@ -616,10 +616,10 @@
             <table style="width: 100%;">
                 <tr>
                     <td style="text-align: center">
-                        <input type="button" id="btnVolver5" class="btnMenu chicoInferior" />
+                        <input type="button" id="btnVolver5" class="btnMenu chicoInferior" disabled="disabled" />
                     </td>
                     <td style="text-align: center">
-                        <input type="button" id="btnHome6" class="btnMenu chicoInferior" />
+                        <input type="button" id="btnHome6" class="btnMenu chicoInferior" disabled="disabled" />
                     </td>
                     <td style="text-align: center">
                         <input type="button" id="Button11" class="btnMenu chicoInferior" style="display: none" />
@@ -715,7 +715,7 @@
             </table>
         </div>
         <div class="divCapacitacionesContainer">
-            <div class="divCuadroCapacitaciones">
+            <div class="divCuadroCapacitaciones" id="divCuadroCapacitacionesID">
                 <div style="margin-top: 1.5%; font-weight: normal">
                     <table width="100%" id="tableEventosCapacitaciones">
                         <thead>
@@ -774,7 +774,7 @@
                 <table style="width: 100%;">
                     <tr>
                         <td align="center">
-                            <table cellpadding="0" cellspacing="0" style="height: 20px">
+                            <table cellpadding="0" cellspacing="0" style="height: auto">
                                 <tr>
                                     <td>
                                         <input type="button" id="btnPres1" class="btnMenuChicorio RechicoPresupuesto" />
@@ -821,7 +821,7 @@
                 </table>
             </div>
             <div class="divCuadroCalculadoraPresupuestoDerecha" id="divCuadroCalculadoraPresupuestoDerechaID">
-                <div style="margin-top: 1.5%; height: 160%; margin-bottom:160%">
+                <div style="margin-top: 1.5%; height: 160%; margin-bottom: 160%">
                     <table id="tableCalculadoraPresupuestoHeader" width="100%">
                         <thead>
                             <tr>
@@ -977,6 +977,17 @@
                         dentro del marco de la Agrotón 2014 para las entidades Banco Agrario y Fiduagraria,
                         obteniendo el primer lugar en dicho evento, en el reto de Educación Financiera.
                     </span>
+                    <br />
+                    <br />
+                    <br />
+                    <span style="font-weight: normal"><b style="font-size: large">Poteka Designio</b> está
+                        conformado por:
+                        <br />
+                        <br />
+                        <b>Sara Senior Castaño</b> - <i>sarasenior@hotmail.com</i><br />
+                        <b>Juan Manuel Ruiz </b>- <i>dimanuelruiz@gmail.com</i><br />
+                        <b>Jorge Andrés Alvarado</b> - <i>jaalvaradog@unal.edu.co</i><br />
+                    </span>
                 </div>
             </div>
             <div class="spanDisclaimer">
@@ -1035,7 +1046,7 @@
                 <table style="width: 100%;">
                     <tr>
                         <td align="center">
-                            <table cellpadding="0" cellspacing="0" style="height: 20px">
+                            <table cellpadding="0" cellspacing="0" style="height: auto">
                                 <tr>
                                     <td>
                                         <input type="button" id="btnAhorro1" class="btnMenuChicorio RechicoPresupuesto" />
@@ -1077,7 +1088,7 @@
                 </table>
             </div>
             <div class="divCuadroPlanAhorroDerecha" id="divCuadroPlanAhorroDerechaID">
-                <div style="margin-top: 1.5%; height: 160%; margin-bottom:160%">
+                <div style="margin-top: 1.5%; height: 160%; margin-bottom: 160%">
                     <table id="tablePlanAhorroDatos" width="100%">
                         <thead>
                             <tr>
@@ -1134,7 +1145,6 @@
             </table>
         </div>
     </div>
-    <script type="text/javascript" src="js/openfb.js"></script>
     <script type="text/javascript" src="js/jquery-1.7.js"></script>
     <script type="text/javascript" src="js/BLL/JS_AppLogic.js"></script>
     <script type="text/javascript" src="js/UI/UI_Events.js"></script>

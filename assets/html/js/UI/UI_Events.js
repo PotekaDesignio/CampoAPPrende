@@ -2,28 +2,87 @@
 
     $('#btnIniciar').click(function () {
 
-        if (localStorage.getItem('resultado') != null) {
-            var speed = 500;
-            $('.page.current').animate({ opacity: 0, margintop: 800 }, speed, function () {
-                $('#page-1').removeClass('current');
-                $('#page-2').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+        if (!$('#btnIniciar').prop('disabled')) {
+            var retrievedObject = localStorage.getItem('resultado');
 
-            });
-        }
-        else {
+            if (retrievedObject != null) {
+                var speed = 500;
+                $('.page.current').animate({ opacity: 0, margintop: 800 }, speed, function () {
+                    $('#page-1').removeClass('current');
+                    $('#page-2').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
 
-            var testVal = "Estamos descargando la información. Vuelve a intentarlo en unos segundos.";
-            try {
-                AndroidFunctionToast.showToast(testVal); AndroidFunctionToast
+                });
             }
-            catch (err) {
-                //alert(testVal);
+            else {
+                var testVal = "Estamos descargando la información. Vuelve a intentarlo en unos segundos.";
+                $('#btnIniciar').attr("disabled", true);
+                try {
+                    AndroidFunctionToast.showToast(testVal); AndroidFunctionToast
+                }
+                catch (err) {
+                    try {
+                        var iframe = document.createElement("IFRAME");
+                        iframe.setAttribute("src", 'data:text/plain,');
+                        document.documentElement.appendChild(iframe);
+                        window.frames[0].window.alert(testVal);
+                        iframe.parentNode.removeChild(iframe);
+
+                    } catch (e) {
+                        alert(testVal);
+                    }
+
+                }
+
+                async("descargando", function () {
+                    var retrievedObject = localStorage.getItem('resultado');
+
+                    if (retrievedObject != null) {
+                        var speed = 500;
+                        $('.page.current').animate({ opacity: 0, margintop: 800 }, speed, function () {
+                            $('#page-1').removeClass('current');
+                            $('#page-2').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+
+                        });
+                    }
+                    else {
+                        $('#btnIniciar').prop("disabled", false);
+                        var testVal = "CampoAPPrende requiere que por lo menos te conectes una vez a internet para descargar el contenido. Por favor conéctate e intenta de nuevo.";
+                        try {
+                            AndroidFunctionToast.showToast(testVal); AndroidFunctionToast
+                        }
+                        catch (err) {
+                            try {
+                                var iframe = document.createElement("IFRAME");
+                                iframe.setAttribute("src", 'data:text/plain,');
+                                document.documentElement.appendChild(iframe);
+                                window.frames[0].window.alert(testVal);
+                                iframe.parentNode.removeChild(iframe);
+
+                            } catch (e) {
+                                alert(testVal);
+                            }
+
+                        }
+
+                    }
+                });
             }
-
         }
-
 
     });
+
+    function async(fn, callback) {
+        setTimeout(function () {
+            DescargarDatos();
+            callback();
+        }, 5000);
+    }
+    function sync(fn) {
+        fn();
+    }
+    function foo() {
+        console.log('foo');
+    }
 
     $('#btnFacebook').click(function () {
 
@@ -588,26 +647,77 @@
 
     $('#btnAtreves').click(function () {
 
-        //var contadorSeAtreve = localStorage.getItem('contadorSeAtreve');
+        var contadorSeAtreve = localStorage.getItem('contadorSeAtreve');
+        var moduloFinalizado = localStorage.getItem('moduloFinalizado');
 
-        //if (isNaN(contadorSeAtreve))
-        //    contadorSeAtreve = 0;
+        if (isNaN(contadorSeAtreve))
+            contadorSeAtreve = 0;
 
-        //if (contadorSeAtreve < 2) {
+        if (contadorSeAtreve < 2) {
 
-        //}
-        //else {
+            contadorSeAtreve++;
+            localStorage.setItem('contadorSeAtreve', contadorSeAtreve);
 
-        //    var mensajeTriviaSeAtreveMaxima = "Puedes atreverte sólo dos veces por cada módulo.";
-        //    try {
-        //        AndroidFunctionToast.showToast(mensajeTriviaSeAtreveMaxima);
-        //    }
-        //    catch (err) {
-        //        //alert(mensajeTriviaSeAtreveMaxima);
-        //    }
+            if (moduloFinalizado != 1) {
+                entrarTeAtreves();
+                asyncTrivia("", function () { });
+            }
+            
+        }
+        else {
 
-        //}
+            var mensajeTriviaSeAtreveMaxima = "Puedes atreverte sólo dos veces por cada módulo.";
+            try {
+                AndroidFunctionToast.showToast(mensajeTriviaSeAtreveMaxima);
+            }
+            catch (err) {
+
+                try {
+                    var iframe = document.createElement("IFRAME");
+                    iframe.setAttribute("src", 'data:text/plain,');
+                    document.documentElement.appendChild(iframe);
+                    window.frames[0].window.alert(mensajeTriviaSeAtreveMaxima);
+                    iframe.parentNode.removeChild(iframe);
+
+                } catch (e) {
+
+                    alert(mensajeTriviaSeAtreveMaxima);
+                }
+            }
+        }
+
     });
+
+    function asyncTrivia(fn, callback) {
+        setTimeout(function () {
+            volverAtras();
+            callback();
+        }, 5000);
+    }
+    function sync(fn) {
+        fn();
+    }
+    function foo() {
+        console.log('foo');
+    }
+
+    function entrarTeAtreves() {
+        var speed = 500;
+        $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
+            $('#page-5').removeClass('current');
+            $('#page-8').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+
+        });
+    }
+
+    function volverAtras() {
+        var speed = 500;
+        $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
+            $('#page-8').removeClass('current');
+            $('#page-5').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+
+        });
+    }
 
     $('#btnVolver').click(function () {
         var speed = 500;
@@ -646,12 +756,7 @@
     });
 
     $('#btnVolver5').click(function () {
-        var speed = 500;
-        $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
-            $('#page-8').removeClass('current');
-            $('#page-5').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
-
-        });
+        //volverAtras();
     });
 
     $('#btnVolver6').click(function () {
@@ -703,9 +808,9 @@
         $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
             $('#page-1').removeClass('current');
             $('#page-9').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
-
+            $("#divTextoAyudaID").scrollTop(0);
         });
-        $("#divTextoAyudaID").scrollTop(0);
+        
     });
 
     $('#btnAcercaDe').click(function () {
@@ -713,9 +818,9 @@
         $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
             $('#page-1').removeClass('current');
             $('#page-12').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
-
+            $("#divTextoAcercaDeID").scrollTop(0);
         });
-        $("#divTextoAcercaDeID").scrollTop(0);
+        
     });
 
     $('#btnContacto').click(function () {
@@ -758,18 +863,18 @@
         $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
             $('#page-1').removeClass('current');
             $('#page-11').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
-
+            $('divCuadroCalculadoraPresupuestoDerechaID').scrollTop(0);
         });
-        $('divCuadroCalculadoraPresupuestoDerechaID').scrollTop(0);
+        
     });
     $('#btnPlanAhorro').click(function () {
         var speed = 500;
         $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
             $('#page-1').removeClass('current');
             $('#page-13').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
-
+            $("#divCuadroPlanAhorroDerechaID").scrollTop(0);
         });
-        $("#divCuadroPlanAhorroDerechaID").scrollTop(0);
+        
     });
 
     $('#btnCapacitacion').click(function () {
@@ -777,6 +882,7 @@
         $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
             $('#page-1').removeClass('current');
             $('#page-10').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+            $('#divCuadroCapacitacionesID').scrollTop(0);
 
         });
     });

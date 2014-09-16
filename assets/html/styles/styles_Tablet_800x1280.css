@@ -4,6 +4,12 @@
 /* Desktops and laptops ----------- */
 @media all and (min-width : 1025px) and (max-width : 1280px)
 {
+    @font-face {
+        font-family: Futura;
+        src: url('../fonts/Futura-Medium.woff');
+        src: url('../fonts/Futura-Medium.eot');
+        src: url('../fonts/Futura-Medium.ttf');
+    }
 
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
     {
@@ -20,7 +26,7 @@
 
     body
     {
-        font-family: Arial;
+        font-family: Futura;
         background: url(../images/tablet/backgrounds/fondo_general.png) no-repeat center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -31,13 +37,13 @@
     
     span
     {
-        font-family: Arial;
+        font-family: Futura;
         font-weight: bold;
     }
 
     p
     {
-        font-family: Arial;
+        font-family: Futura;
         font-style: normal;
     }
 
@@ -54,7 +60,7 @@
 
     h2
     {
-        font-family: Arial;
+        font-family: Futura;
         color: white;
         font-size: 26pt;
         font-weight: 900;
@@ -71,7 +77,7 @@
     .divTituloAplicacion span
     {
         color: Black;
-        font-family: Arial;
+        font-family: Futura;
     }
 
     .lblSubtituloAplicacion
@@ -105,6 +111,7 @@
         width: 321px;
         height: 51px;
         cursor: pointer;
+        font-family:Futura;
     }
 
     .btnMenu.chico
@@ -152,13 +159,12 @@
     {
         margin-right: inherit;
         display: inline-block;
-        width: 190px;
+        width: 240px;
         height: 51px;
         cursor: pointer;
         color: white;
-        text-align: left;
-        font-weight: bolder;
-        padding-left: 10%;
+        text-align: center;
+        padding-left: 2%;
     }
 
     .btnMenuChicorio
@@ -714,6 +720,7 @@
         height: 51px;
         cursor: pointer;
         color: white;
+        font-family:Futura;
     }
 
     .divOpcionesInfoSeccion
@@ -1067,6 +1074,7 @@
         padding-right: 0px;
         padding-top: 5px;
         padding-bottom: 5px;
+        font-family:Futura;
     }
 
     .divCuadroCalculadoraPresupuestoDerecha table tbody tr td input
@@ -1080,10 +1088,11 @@
         padding-bottom: 5px;
         text-align: center;
         color: black;
-        width: 60%;
+        width: 90%;
         margin-left: 0px;
         color: white;
         background-color: transparent;
+        font-family:Futura;
     }
 
     .divCuadroCalculadoraPresupuestoDerecha table tbody tr:nth-child(odd)
@@ -1291,6 +1300,7 @@
         padding-top: 2px;
         padding-bottom: 2px;
         font-size: 16pt;
+        font-family:Futura;
     }
 
     .divCuadroPlanAhorroDerecha table tbody tr td input
@@ -1304,11 +1314,12 @@
         padding-bottom: 5px;
         text-align: center;
         color: black;
-        width: 65%;
+        width: 90%;
         margin-left: 0px;
         color: white;
         background-color: transparent;
         font-size: 60%;
+        font-family:Futura;
     }
 
     .divCuadroPlanAhorroDerecha table tfoot tr td
@@ -1427,6 +1438,7 @@
         margin-left: 0px;
         color: white;
         background-color: #9C5018;
+        font-family:Futura;
     }
 
     .tablePlanAhorroDatosTotal table tfoot tr td input
@@ -1444,6 +1456,7 @@
         margin-left: 0px;
         color: white;
         background-color: transparent;
+        font-family:Futura;
     }
 
     #btnGuardarAhorro

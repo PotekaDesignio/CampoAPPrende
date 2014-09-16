@@ -32,7 +32,7 @@
     function UpdateHandlers() {
 
         $('.priceValor').focus(function () {
-            if ($(this).val() == '0' || $(this).val() == '$0.00') {
+            if ($(this).val() == '0' || $(this).val() == '$0') {
                 $(this).val('');
             }
             $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
@@ -48,11 +48,6 @@
             }
         });
 
-        
-        $('.priceMes').keyup(function () {
-            $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
-        });
-        
         $('.priceValor').blur(function () {
             if ($(this).val() == '') {
                 $(this).val('0');
@@ -74,7 +69,7 @@
         });
 
         $('.info').keyup(function () {
-            $(this).val($(this).val().replace(/[^a-z]/g, ""));
+            $(this).val($(this).val().replace(/[^a-zA-Z\s]/g, ""));
         });
 
         $('.info').blur(function () {
@@ -351,7 +346,7 @@
             }
             ahorroMes = valorCosa / numeroMeses;
             $(this).find('td').eq(3).find($('.priceAhorro')).val(ahorroMes);
-            $(this).find('td').eq(3).find($('.priceAhorro')).formatCurrency();
+            $(this).find('td').eq(3).find($('.priceAhorro')).formatCurrency({ roundToDecimalPlace: -2 });
 
             if (!isNaN(ahorroMes)) {
                 if (!metaAlcanzada) {
@@ -372,8 +367,8 @@
 
         var table = $("#tablePlanAhorroDatos tbody");
         table.find('tr').each(function (i) {
-            $(this).find('td').eq(1).find($('.priceValor')).formatCurrency();
-            $(this).find('td').eq(3).find($('.priceAhorro')).formatCurrency();
+            $(this).find('td').eq(1).find($('.priceValor')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(3).find($('.priceAhorro')).formatCurrency({ roundToDecimalPlace: -2 });
         });
     }
 
@@ -389,7 +384,8 @@
             cents = "0" + cents;
         for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
             num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
-        return (((sign) ? '' : '-') + '$' + num + '.' + cents);
+        //return (((sign) ? '' : '-') + '$' + num + '.' + cents);
+        return (((sign) ? '' : '-') + '$' + num);
     }
 
 });

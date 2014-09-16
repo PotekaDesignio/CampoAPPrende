@@ -78,7 +78,7 @@
     function UpdateHandlers() {
 
         $('.price').focus(function () {
-            if ($(this).val() == '0' || $(this).val() == '$0.00') {
+            if ($(this).val() == '0' || $(this).val() == '$0') {
                 $(this).val('');
             }
             $(this).val($(this).val().replace(/[^0-9\.]+/g, ""));
@@ -103,7 +103,7 @@
         });
 
         $('.info').keyup(function () {
-            $(this).val($(this).val().replace(/[^a-z]/g, ""));
+            $(this).val($(this).val().replace(/[^a-zA-Z\s]/g, ""));
         });
 
         $('.info').blur(function () {
@@ -136,10 +136,10 @@
             var semana4 = 0;
 
             var $tds = $(this).find('td'),
-                                        semana1 = parseFloat(Number($tds.eq(1).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
-                                        semana2 = parseFloat(Number($tds.eq(2).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
-                                        semana3 = parseFloat(Number($tds.eq(3).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
-                                        semana4 = parseFloat(Number($tds.eq(4).find($('.price')).val().replace(/[^0-9\.]+/g, "")));
+                                        semana1 = parseInt(Number($tds.eq(1).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
+                                        semana2 = parseInt(Number($tds.eq(2).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
+                                        semana3 = parseInt(Number($tds.eq(3).find($('.price')).val().replace(/[^0-9\.]+/g, ""))),
+                                        semana4 = parseInt(Number($tds.eq(4).find($('.price')).val().replace(/[^0-9\.]+/g, "")));
 
 
             if (!isNaN(semana1) && !isNaN(semana2) && !isNaN(semana3) && !isNaN(semana4)) {
@@ -173,10 +173,10 @@
             var semana4 = 0;
 
             var $tds = $(this).find('td'),
-                                        semana1 = parseFloat(Number($tds.eq(1).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1,
-                                        semana2 = parseFloat(Number($tds.eq(2).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1,
-                                        semana3 = parseFloat(Number($tds.eq(3).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1,
-                                        semana4 = parseFloat(Number($tds.eq(4).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1;
+                                        semana1 = parseInt(Number($tds.eq(1).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1,
+                                        semana2 = parseInt(Number($tds.eq(2).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1,
+                                        semana3 = parseInt(Number($tds.eq(3).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1,
+                                        semana4 = parseInt(Number($tds.eq(4).find($('.price')).val().replace(/[^0-9\.]+/g, ""))) * -1;
 
             if (!isNaN(semana1) && !isNaN(semana2) && !isNaN(semana3) && !isNaN(semana4)) {
                 totalSemana1 += semana1;
@@ -205,18 +205,18 @@
 
         var table = $("#tableCalculadoraPresupuestoIngresos tbody");
         table.find('tr').each(function (i) {
-            $(this).find('td').eq(1).find($('.price')).formatCurrency();
-            $(this).find('td').eq(2).find($('.price')).formatCurrency();
-            $(this).find('td').eq(3).find($('.price')).formatCurrency();
-            $(this).find('td').eq(4).find($('.price')).formatCurrency();
+            $(this).find('td').eq(1).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(2).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(3).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(4).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
         });
 
         table = $("#tableCalculadoraPresupuestoGastos tbody");
         table.find('tr').each(function (i) {
-            $(this).find('td').eq(1).find($('.price')).formatCurrency();
-            $(this).find('td').eq(2).find($('.price')).formatCurrency();
-            $(this).find('td').eq(3).find($('.price')).formatCurrency();
-            $(this).find('td').eq(4).find($('.price')).formatCurrency();
+            $(this).find('td').eq(1).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(2).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(3).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
+            $(this).find('td').eq(4).find($('.price')).formatCurrency({ roundToDecimalPlace: -2 });
         });
 
     }
@@ -490,7 +490,8 @@
             cents = "0" + cents;
         for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
             num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
-        return (((sign) ? '' : '-') + '$' + num + '.' + cents);
+        //return (((sign) ? '' : '-') + '$' + num + '.' + cents);
+        return (((sign) ? '' : '-') + '$' + num);
     }
 
 });

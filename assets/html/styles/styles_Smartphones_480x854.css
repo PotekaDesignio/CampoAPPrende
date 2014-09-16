@@ -7,7 +7,14 @@
 
     /*este sirve para el emulador*/
     /*@media all and (max-width : 856px) {*/
-
+    
+     @font-face {
+        font-family: Futura;
+        src: url('../fonts/Futura-Medium.woff');
+        src: url('../fonts/Futura-Medium.eot');
+        src: url('../fonts/Futura-Medium.ttf');
+    }
+    
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
         margin: 0;
         padding: 0;
@@ -21,7 +28,7 @@
     }
 
     body {
-        font-family: Arial;
+        font-family: Futura;
         background: url(../images/tablet/backgrounds/fondo_general.png) no-repeat center;
         -webkit-background-size: 200%;
         -moz-background-size: 200%;
@@ -40,18 +47,18 @@
     input {
         padding: 0; /*border: none;         background: none;*/
         border: none !important;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
     }
 
     p {
-        font-family: Arial;
+        font-family: Futura;
         font-style: normal;
     }
 
     h2 {
-        font-family: Arial;
+        font-family: Futura;
         color: white;
         font-size: 20pt;
     }
@@ -69,16 +76,16 @@
 
         .divTituloAplicacion span {
             color: Black;
-            font-family: Arial;
+            font-family: Futura;
         }
 
     .lblSubtituloAplicacion {
         margin-top: -3px;
-        font-size: 16pt;
+        font-size: 13pt;
     }
 
     .divSubtituloInformacion {
-        font-size: 16pt;
+        font-size: 12pt;
     }
 
     .page {
@@ -146,7 +153,7 @@
             margin-right: inherit;
             display: inline-block;
             width: 100px;
-            height: 30px;
+            height: 24px;
             cursor: pointer;
             color: white;
             text-align: left;
@@ -161,9 +168,10 @@
             height: 30px;
             cursor: pointer;
             color: blue;
-            text-align: left;
-            padding-left: 2%;
+            text-align: center;
+            padding: 2%;
             font-size: 8pt;
+            font-family: Futura;
         }
 
     .btnMenuChicorio {
@@ -678,10 +686,12 @@
     .btnMenuPregunta {
         display: inline-block;
         width: 100%;
-        height: 30px;
+        height: 33px;
         cursor: pointer;
         color: white;
-        font-size:10pt;
+        font-size:8pt;
+        font-family: Futura;
+        padding:1px;
     }
 
     .divPreguntasRespuestasDetalle h2{
@@ -700,7 +710,7 @@
 
     .divContenidoInfoSeccion {
         width: 60%;
-        height: auto;
+        height: 150px;
         text-align: justify;
         background-color: #E96A2D;
         float: left;
@@ -753,12 +763,12 @@
 
     .tableEncabezadoPregunta {
         background-color: #9C5018;
-        height: 40px;
+        height: 30px;
         vertical-align: middle;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-        padding:10px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        padding:1px;
     }
 
     .tableEncabezadoPregunta h2{
@@ -769,13 +779,19 @@
         width: 95%;
         margin: 0px;
     }
+    
+     #spanEncabezadoPregunta {
+        font-size: auto;
+        font-weight:bold;
+    }
 
     #spanEncabezadoPreguntaAtreves {
-        font-size: 12pt;
+        font-size: auto;
+        font-weight:bold;
     }
 
     #spanEstimuloRecibido {
-        font-size: 10pt;
+        font-size: 9pt;
     }
 
 
@@ -909,7 +925,7 @@
         padding-bottom: 5px;
         text-align: center;
         color: black;
-        width: 65%;
+        width: 90%;
         margin-left: 0px;
         color: white;
         background-color: transparent;
@@ -928,7 +944,7 @@
         display: inline-block;
         float: left;
         height: 80%;
-        margin-top: 18px;
+        margin-top: 14px;
         width: 25%;
         vertical-align: middle;
         text-align: center;
@@ -938,16 +954,15 @@
     }
 
     .divCuadroCalculadoraPresupuestoDerecha {
-        display: inline-block;
+        
         float: left;
-        height: 50%;
+        height: 82%;
         width: 70%;
         vertical-align: middle;
         text-align: center;
         padding: 10px;
         color: white;
         overflow-y: auto;
-        position: fixed;
     }
 
     .tdPrimeraCelda {
@@ -994,9 +1009,9 @@
         }
 
         .divCuadroCalculadoraPresupuestoDerecha table tbody tr td {
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            border-radius: 4px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
             padding-left: 0px;
             padding-right: 0px;
             padding-top: 2px;
@@ -1004,20 +1019,16 @@
         }
 
             .divCuadroCalculadoraPresupuestoDerecha table tbody tr td input {
-                -webkit-border-radius: 2px;
-                -moz-border-radius: 2px;
-                border-radius: 2px;
-                padding-left: 0px;
-                padding-right: 0px;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                padding-top: 2px;
+                padding-bottom: 2px;
                 text-align: center;
                 color: black;
-                width: 65%;
+                width: 90%;
                 margin-left: 0px;
                 color: white;
                 background-color: transparent;
-                font-size: 8pt;
+                font-size: 7pt;
+                font-family:Futura;
             }
 
         .divCuadroCalculadoraPresupuestoDerecha table tbody tr:nth-child(odd) {
@@ -1125,7 +1136,7 @@
         display: inline-block;
         float: left;
         height: 70%;
-        margin-top: 18px;
+        margin-top: 10px;
         width: 25%;
         vertical-align: middle;
         text-align: center;
@@ -1136,9 +1147,9 @@
     }
 
     .divCuadroPlanAhorroDerecha {
-        display: inline-block;
+        
         float: left;
-        height: 50%;
+        height: 82%;
         width: 70%;
         vertical-align: middle;
         text-align: center;
@@ -1146,7 +1157,7 @@
         color: white;
         overflow-y: auto;
         overflow-x: hidden;
-        position: fixed;
+        
     }
 
     .tdPrimeraCeldaPlanAhorro {
@@ -1183,10 +1194,12 @@
     }
 
         .divCuadroPlanAhorroDerecha table thead tr td {
-            
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
             text-align: center;
-            padding-left: 1px;
-            padding-right: px;
+            padding-left: 5px;
+            padding-right: 5px;
             padding-top: 2px;
             padding-bottom: 2px;
             vertical-align: middle;
@@ -1205,6 +1218,7 @@
             padding-top: 2px;
             padding-bottom: 2px;
             font-size: 12pt;
+            font-family:Futura;
         }
 
             .divCuadroPlanAhorroDerecha table tbody tr td input {
@@ -1217,11 +1231,12 @@
                 padding-bottom: 5px;
                 text-align: center;
                 color: black;
-                width: auto ;
+                width: 90%;
                 margin-left: 0px;
                 color: white;
                 background-color: transparent;
                 font-size: 60%;
+                font-family:Futura;
             }
 
         .divCuadroPlanAhorroDerecha table tfoot tr td {
@@ -1313,7 +1328,6 @@
                 margin-left: 0px;
                 color: white;
                 background-color: transparent;
-                /*font-size: 60%;*/
             }
 
         .tablePlanAhorroDatosTotal table tfoot tr td {
@@ -1348,6 +1362,7 @@
                 color: white;
                 background-color: transparent;
                 font-size: 8pt;
+                font-family:Futura;
             }
 
     #btnGuardarAhorro {

@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    /* Inicio ConfiguraciÃ³n de la aplicaciÃ³n */
+    /* Inicio Configuración de la aplicación */
     delete window.localStorage["idModulo"];
     verificarEstadoAvance();
     verificarEstadoNarrador(true);
@@ -146,7 +146,7 @@
         if (totalRespuestasCorrectas == 5 && idModulo == estadoAvance) {
             
             var strMensajeFinalizacionModulo = "FACEBOOK_FINAL-MODULO_" + $('#lblTituloGeneralModulo').text() + "_Felicitaciones!! Has culminado exitosamente el módulo: " + $('#lblTituloGeneralModulo').text();
-
+            localStorage.setItem('moduloFinalizado', 1);
             try {
                 AndroidFunctionToast.showToast(strMensajeFinalizacionModulo);
             }
@@ -168,6 +168,7 @@
 
             if (estadoAvance == 6 && totalRespuestasCorrectas == 5) {
                 var strMensajeFinalizacionJuego = "¡Felicitaciones! Has finalizado CampoAPPrende! Aprovecha el conocimiento que has adquirido y aplícalo en tu vida diaria.";
+                localStorage.setItem('moduloFinalizado', 1);
                 try {
                     AndroidFunctionToast.showToast(strMensajeFinalizacionJuego);
                 }
@@ -241,39 +242,25 @@
             }
         }
 
+//        if (estadoAvance == 6 && totalRespuestasCorrectas == 5) {
+//            var strMensajeFinalizacionJuego = "¡Felicitaciones! Has finalizado CampoAPPrende! Aprovecha el conocimiento que has adquirido y aplícalo a tu vida diaria.";
+//            localStorage.setItem('moduloFinalizado', 1);
+//            try {
+//                AndroidFunctionToast.showToast(strMensajeFinalizacionJuego);
+//            }
+//            catch (err) {
+//                var iframe = document.createElement("IFRAME");
+//                iframe.setAttribute("src", 'data:text/plain,');
+//                document.documentElement.appendChild(iframe);
+//                window.frames[0].window.alert(strMensajeFinalizacionJuego);
+//                iframe.parentNode.removeChild(iframe);
+//            }
+//        }
+
         localStorage.setItem('estadoAvance', estadoAvance);
     }
 
-    $('#btnReiniciarDatos').click(function () {
-
-
-
-        delete window.localStorage["estadoAvance"];
-        delete window.localStorage["narrador"];
-        delete window.localStorage["resultado"];
-        delete window.localStorage["ContadorIngresosActuales"];
-        delete window.localStorage["ContadorGastosActuales"];
-        delete window.localStorage["contadorSeAtreve"];
-
-        delete window.localStorage["respuestaCorrecta"];
-        delete window.localStorage["mensajeCorrecto"];
-        delete window.localStorage["mensajeError"];
-        delete window.localStorage["preguntasResueltas"];
-        delete window.localStorage["totalRespuestasCorrectas"];
-
-        for (var i = 0; i <= 6; i++) {
-
-            delete window.localStorage["Presupuesto_" + i.toString()];
-            delete window.localStorage["Ahorro_" + i.toString()];
-        }
-
-        //Equipo Android
-        window.location = "../html/index.html";
-        //Navegador web
-        //        window.location = "index.html";
-
-    });
-    /* Fin ConfiguraciÃ³n de la aplicaciÃ³n */
+    /* Fin Configuración de la aplicación */
 
     /*Inicio Definicion del Concepto */
     $('#btnMasInfo').click(function () {
@@ -394,15 +381,17 @@
                 var strResultado1 = strResultado.replace(/-salto-/g, "<br /><br />");
                 var strResultado2 = strResultado1.replace(/;/g, ",");
                 var strResultado3 = strResultado2.replace(/No Aplica/g, "");
+                var strReplaceSlash = strResultado2.replace(/\//g, "-");
+                var strResultado4 = strReplaceSlash.replace(/N-A/g, "");
 
-                if (strResultado3.indexOf("http://") > -1) {
-                    strResultado3 = "<a href='#' class='spanLinkInteres'>" + strResultado3 + "</a>";
+                if (strResultado4.indexOf("http://") > -1) {
+                    strResultado4 = "<a href='#' class='spanLinkInteres'>" + strResultado4 + "</a>";
                     /*Aqui hay que meter un boton y que lo maneje android */
                 }
 
-                $("#divDefinicionConceptos").html(strResultado3);
-                indice++;
+                $("#divDefinicionConceptos").html(strResultado4);
                 $("#divDefinicionConceptos").scrollTop(0);
+                indice++;
             }
         });
 
@@ -425,18 +414,6 @@
     /*Fin Definicion del Concepto */
 
     /*Inicio Trivia Preguntas */
-    $('#btnTrivia').click(function () {
-
-        //var estadoAvance = localStorage.getItem('estadoAvance');
-        //estadoAvance++;
-
-        //localStorage.setItem('estadoAvance', estadoAvance);
-        ////localStorage.setItem('estadoAvance', null);
-
-        //verificarEstadoAvance();
-
-    });
-
     $('#btnVerdad').click(function () {
 
         //$("#btn5050").removeAttr("disabled");
@@ -776,15 +753,15 @@
 
             jQuery.support.cors = true;
 
-            var speed = 500;
-            $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
-                $('#page-5').removeClass('current');
-                $('#page-8').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+            //var speed = 500;
+//            $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
+//                $('#page-5').removeClass('current');
+//                $('#page-8').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
 
-            });
+//            });
 
-            contadorSeAtreve++;
-            localStorage.setItem('contadorSeAtreve', contadorSeAtreve);
+            //contadorSeAtreve++;
+            //localStorage.setItem('contadorSeAtreve', contadorSeAtreve);
 
             var idModulo = localStorage.getItem('idModulo');
             var retrievedObject = localStorage.getItem('resultado');
@@ -888,7 +865,11 @@
                     var strResultado = this.value
 
                     strResultado = strResultado.replace(/;/g, ",");
-                    $("#spanEncabezadoPreguntaAtreves").text(strResultado);
+
+                    var strReplaceSlash = strResultado.replace(/\//g, "-");
+                    var strResultado4 = strReplaceSlash.replace(/N-A/g, "");
+
+                    $("#spanEncabezadoPreguntaAtreves").text(strResultado4);
                     indice++;
                 }
             });
@@ -908,7 +889,11 @@
 
                         var strResultado = this.text;
                         strResultado = strResultado.replace(/;/g, ",");
-                        $("#spanEstimuloRecibido").text(strResultado);
+
+                        var strReplaceSlash = strResultado.replace(/\//g, "-");
+                        var strResultado4 = strReplaceSlash.replace(/N-A/g, "");
+
+                        $("#spanEstimuloRecibido").text(strResultado4);
                         indice++;
                     }
                 }
@@ -926,10 +911,12 @@
                 localStorage.setItem('totalRespuestasCorrectas', totalRespuestasCorrectas);
 
                 if (totalRespuestasCorrectas == 5) {
+                    localStorage.setItem('moduloFinalizado', 1);
                     var speed = 2000;
                     $('.page.current').animate({ opacity: 0, margintop: 0 }, speed, function () {
                         $('#page-8').removeClass('current');
                         $('#page-3').css('marginTop', 0).animate({ opacity: 1, marginTop: 0 }).addClass('current');
+                        localStorage.setItem('moduloFinalizado', 0);
 
                     });
                 }
@@ -1003,13 +990,13 @@
         }
         else {
 
-            var mensajeTriviaSeAtreveMaxima = "Puedes atreverte sólo dos veces por cada módulo.";
-            try {
-                AndroidFunctionToast.showToast(mensajeTriviaSeAtreveMaxima);
-            }
-            catch (err) {
-                alert(mensajeTriviaSeAtreveMaxima);
-            }
+//            var mensajeTriviaSeAtreveMaxima = "Puedes atreverte sólo dos veces por cada módulo.";
+//            try {
+//                AndroidFunctionToast.showToast(mensajeTriviaSeAtreveMaxima);
+//            }
+//            catch (err) {
+//                alert(mensajeTriviaSeAtreveMaxima);
+//            }
 
         }
 
